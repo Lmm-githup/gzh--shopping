@@ -113,14 +113,14 @@
 		<!--头部图片-->
 		<div class="DetailsImage">
 			<div class="DetailsLogo">
-				<div class="logo"><img src="images/lun.png"></div>
+				<div class="logo"><img src="images/轮播图.png"></div>
 			</div>
 			<div class="Wrap">
 				<div class="DetailsRight">
-						<!-- <div><img src="images/lun.png"></div>
-						<div></div>
-						<div></div> -->
-			        </div>
+					<div><img src="images/轮播图.png"></div>
+					<div><img src="images/轮播图.png"></div>
+					<div><img src="images/轮播图.png"></div>
+				</div>
 			</div>
 		</div>
 		<!--头部图片-->
@@ -144,24 +144,13 @@
 </body>
 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>		
 <script type="text/javascript" src="js/d.js"></script>
-<script type="text/javascript" src="json/json.js"></script>
+
 <script type="text/javascript">
-// var swiperArr = [{img:"images/lun.png",id:0},{img:"images/lun.png",id:1},{img:"images/lun.png",id:2}]//头部左右轮播
-	window.onload = function() {
-
-        for(let i in swiperArr){
-              let div = $('<div></div>');
-              let htmls = `<img src="${swiperArr[i].img}"/>`;
-              div.html(htmls)
-              $('.DetailsRight').append(div)
-          }
-
-//		获取滑动的图
-		let imgsLength = $(".DetailsRight").find("div").length;
-		let imgsWidth = imgsLength * 6.69 + 1 +'rem';
-		$(".DetailsRight").css("width",imgsWidth);
-		
-
-	}
+window.onload = function() {
+	//获取滑动的图
+	let imgsLength = $(".DetailsRight").find("div").length;
+	let imgsWidth = imgsLength * 6.69 + 1 +'rem';
+	$(".DetailsRight").css("width",imgsWidth);
+}
 </script>
 </html>

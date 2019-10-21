@@ -28,7 +28,7 @@
 	  }
 	  .info{
 	  	width:90%;
-	  	height:3rem;
+	  	/*height:3rem;*/
 	  	/*background: red;*/
 	  	margin: 0 auto;
 	  	overflow: hidden;
@@ -39,21 +39,22 @@
 	  	margin-top:0.4rem;
 	  }
 	  .info .infoImg{
-	  	width:1.67rem;
-	  	height: 1.56rem;
+	  	width:2.5rem;
+	  	height: 2.5rem;
 	  	border-radius: 50%;
 	  	background: #ccc;
 	  	overflow: hidden;
-	  	margin-top:0.2rem;
+	  	margin-top:0.1rem;
 	  	margin-right: 0.1rem;
 	  }
 	  .info .infoImg img{
 	  	width:100%;height:100%;
 	  }
 	  .info .infoConent{
-	  	width:6.44rem;
-	  	height: 1.8rem;
-	  	/*background: deeppink;*/
+	  	width:6.2rem;
+	  	margin-bottom: 0.4rem;
+	  	/*height: 2.3rem;*/
+	  	          /*background: deeppink;*/
 	  	position:relative;
 	  }
 	  .card{
@@ -65,16 +66,17 @@
 	  .cardTop{
 	  	width:0.7rem;
 	  	position: absolute;
-	  	left:3.8rem;
+	  	left:4rem;
 	  	top:1rem;
 	  }
 	  .integrate{
-	  	font-size:12px;
+	  	font-size:10px;
 	  	position: absolute;
 	  	left:1.75rem;
 	  	top: 0.9rem;
 	  }
-	  .infoConent{font-size: 12px;}
+	  .infoConent{font-size: 0.35rem;}
+	  .changeCity{color: #ba1722;}
 	  /*.info .infoConent p:nth-child(1){
 	  	font-size: 0.4rem;
 	  }*/
@@ -90,7 +92,9 @@
 	  .info .infoQucode{
 	  	width:0.96rem;
 	  	height: 0.96rem;
-	  	/*background: yellow;*/
+	  	position: absolute;
+	  	right:0.5rem;
+	  	                 /*background: yellow;*/
 	  }
 	  .info .infoQucode span{font-size:1rem;line-height: 0.96rem;}
 	  .versatile{
@@ -140,7 +144,7 @@
 	 	height: 100%;
 	 }
 	 .versatile .versatileList p:nth-child(2){
-	 	font-size: 12px;
+	 	font-size: 0.35rem;
 	 	/*background: red;*/
 	 	text-align:center;
 	 }
@@ -186,7 +190,7 @@
 	 	position: relative;
 	 }
 	 .shops .shopList .shopList-Right p{
-	 	font-size: 12px;
+	 	font-size: 0.35rem;
 	 	line-height: 0.67rem;
 	 }
 	 .shops .shopList .shopList-Right p:nth-child(1){font-weight: bold;}
@@ -244,7 +248,7 @@
 	 	width:4rem;
 	 	margin: 0 auto;
 	 	height: 1.9rem;
-	 	font-size: 12px;
+	 	font-size: 0.35rem;
 	 	line-height: 0.5rem;
 	 }
 	 .goods .goodsList .goodList-Content p:nth-child(1){
@@ -330,7 +334,7 @@
 	/*position: absolute;*/
 	margin: 2.2rem auto;
     border-radius: 0.3rem;
-    background-image:url(images/bage.png);
+    background-image:url(images/背景图.png);
     background-size: 100% 100%;
     display: none;
 }
@@ -342,73 +346,180 @@
 	display: none;
 }
 .code img{width:100%;height: 100%;}
+
+/*字体缩放*/
+.small-font{
+    font-size:0.35rem;
+
+    transform: scale(0.85);
+    transform-origin:0 0;
+
+    -ms-transform: scale(0.85);         /* IE 9 */
+    -ms-transform-origin:0 0;       /* IE 9 */
+
+    -webkit-transform: scale(0.85); /* Safari 和 Chrome */
+    -webkit-transform-origin:0 0;   /* Safari 和 Chrome */
+
+    -moz-transform: scale(0.85);        /* Firefox */
+    -moz-transform-origin:0 0;      /* Firefox */
+
+    -o-transform: scale(0.85);      /* Opera */
+    -o-transform-origin:0 0;        /* Opera */
+}
+
+
+
 	</style>
 </head>
 <body>
 	<div class="home">
-		<!--lun横向轮播-->
+	
+		<!--轮播图横向轮播-->
 		<div class="versatile">
 			<div class="swiper-container top-swiper">
-		    <div class="swiper-wrapper swiperTop">
-		      <!-- <div class="swiper-slide swiperHref"><img src="images/lun.png"/></div>
-		      <div class="swiper-slide swiperHref"><img src="images/lun.png"/></div> -->
-		    </div>
-		    <div class="swiper-pagination"></div>
-		 </div>
-		</div>
-		<!--lun-->
-		<!--人员信息-->
-	  <div style="background: white;">
-		<div class="info">
-		   <div class="infoWrap"> 
-			<div class="infoImg"><img src="images/lun.png"/></div>
-			<div class="infoConent">
-				<p>消费积分</p>
-				<p><img src="images/card.png" class="card"/><img src="images/card-width.png" class="cardWidth"/><img src="images/card-top.png" class="cardTop"/>
-				   <div class="integrate">9000/20000</div>
-				</p>
-				<p style="width:7rem;">消费积分：200 &nbsp;&nbsp;&nbsp;体验积分：200</p>
+				<div class="swiper-wrapper swiperTop">
+					<div class="swiper-slide swiperHref" onClick="window.location.href='floor.html'"><img src="images/轮播图.png"/></div>
+					<div class="swiper-slide swiperHref"><img src="images/轮播图.png"/></div> 
+				</div>
+				<div class="swiper-pagination"></div>
 			</div>
-			<!--此处code-->
-			<div class="infoQucode" data-types="1"><span class="icon iconfont">&#xe646;</span></div>
-		   </div>
 		</div>
-	   </div>
+		<!--轮播图-->
+		
+		
 		<!--人员信息-->
+		<div style="background: white;">
+			<div class="info">
+				<div class="infoWrap"> 
+					<div class="infoImg"><img src="images/轮播图.png"/></div>
+					<div class="infoConent">
+						<p>银星卡会员</p>
+						<p>
+							<img src="images/silver.png" class="card"/><img src="images/silver_process.png" class="cardWidth"/><img src="images/silver_upgrade.png" class="cardTop"/>
+							<div class="integrate small-font">9000/20000</div>
+						</p>
+						<p style="width:7rem;">消费积分：200 &nbsp;&nbsp;&nbsp;体验积分：200</p>
+						<p class="changeCity">常州购物中心 ▼</p>
+					</div>
+					
+					<!--此处二维码-->
+					<div class="infoQucode" miniPic="images/二维码.png"><span class="icon iconfont">&#xe646;</span></div>
+				</div>
+			</div>
+		</div>
+		<!--人员信息-->
+		
+		
+		<!--人员信息-->
+		<div style="background: white;">
+			<div class="info">
+				<div class="infoWrap"> 
+					<div class="infoImg"><img src="images/轮播图.png"/></div>
+					<div class="infoConent">
+						<p>金星卡会员</p>
+						<p>
+							<img src="images/gold.png" class="card"/><img src="images/gold_process.png" class="cardWidth"/><img src="images/gold_upgrade.png" class="cardTop"/>
+							<div class="integrate small-font">29000/50000</div>
+						</p>
+						<p style="width:7rem;">消费积分：200 &nbsp;&nbsp;&nbsp;体验积分：200</p>
+						<p class="changeCity">常州购物中心 ▼</p>
+					</div>
+					
+					<!--此处二维码-->
+					<div class="infoQucode" miniPic="images/二维码.png"><span class="icon iconfont">&#xe646;</span></div>
+				</div>
+			</div>
+		</div>
+		<!--人员信息-->
+		
+		
+		<!--人员信息-->
+		<div style="background: white;">
+			<div class="info">
+				<div class="infoWrap"> 
+					<div class="infoImg"><img src="images/轮播图.png"/></div>
+					<div class="infoConent">
+						<p>黑金卡会员</p>
+						<p>
+							<img src="images/blackgold.png" class="card"/><img src="images/blackgold_process.png" class="cardWidth"/><img src="images/blackgold_upgrade.png" class="cardTop"/>
+							<div class="integrate small-font">88000/100000</div>
+						</p>
+						<p style="width:7rem;">消费积分：200 &nbsp;&nbsp;&nbsp;体验积分：200</p>
+						<p class="changeCity">常州购物中心 ▼</p>
+					</div>
+					
+					<!--此处二维码-->
+					<div class="infoQucode" miniPic="images/二维码.png"><span class="icon iconfont">&#xe646;</span></div>
+				</div>
+			</div>
+		</div>
+		<!--人员信息-->
+		
+		
+		<!--人员信息-->
+		<div style="background: white;">
+			<div class="info">
+				<div class="infoWrap"> 
+					<div class="infoImg"><img src="images/轮播图.png"/></div>
+					<div class="infoConent">
+						<p>黑钻卡会员</p>
+						<p>
+							<img src="images/diamond.png" class="card"/><img src="images/diamond_process.png" class="cardWidth"/>
+							<div class="integrate small-font">108000</div>
+						</p>
+						<p style="width:7rem;">消费积分：200 &nbsp;&nbsp;&nbsp;体验积分：200</p>
+						<p class="changeCity">常州购物中心 ▼</p>
+					</div>
+					
+					<!--此处二维码-->
+					<div class="infoQucode" miniPic="images/二维码.png"><span class="icon iconfont">&#xe646;</span></div>
+				</div>
+			</div>
+		</div>
+		<!--人员信息-->
+		
+		
 		<!--功能模块-->
-		   <div class="versatile versatiles" style="margin-top:0.3rem;">
-		   	 <!--若不滑动样式添加-->
-		   	 <div class="swiper-container swiper2">
-			    <div class="swiper-wrapper moduleWrap">
-			     <!--  <div class="swiper-slide module">
-			      	<div class="versatileList">
-			      		<p><img src="images/lun.png"/></p>
-			      		<p>我的功能</p>
-			      	</div>
-			      </div> -->
-			      <!--若有第二页-->
-			      <!-- <div class="swiper-slide module2">
-			      	<div class="versatileList">
-			      		<p><img src="images/lun.png"/></p>
-			      		<p>我的功能</p>
-			      	</div>
-			      </div> -->
-			    </div>
-			  </div>
-
-		   </div>
+		<div class="versatile versatiles" style="margin-top:0.3rem;">
+			<!--若不滑动样式添加-->
+			<div class="swiper-container swiper2">
+				<div class="swiper-wrapper moduleWrap">
+					<!--第一页-->
+					<div class="swiper-slide module">
+						<div class="versatileList" linktype="link" onClick="window.location.href='score.html'">
+							<p><img src="images/轮播图.png"/></p>
+							<p>我的功能</p>
+						</div>
+						<div class="versatileList" linktype="miniqrcode" miniPic="images/二维码.png">
+							<p><img src="images/轮播图.png"/></p>
+							<p>小程序码</p>
+						</div>
+					</div> 
+					
+					<!--若有第二页-->
+					<div class="swiper-slide module" linktype="link" onClick="window.location.href='score.html'">
+						<div class="versatileList">
+							<p><img src="images/轮播图.png"/></p>
+							<p>我的功能</p>
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div>
 		<!--功能模块-->
+		
+		
 		<!--积分兑换-->
 		<div class="scroe">
 			<div>积分兑换</div>
-			<div onclick="window.location.href='score.html'">更多 ></div>
+			<div onClick="window.location.href='score.html'">更多 ></div>
 		</div>
 		<!--积分兑换-->
 		<!--商品模块-->
 		 <div class="shops">
-		 	<!-- <div class="shopList">
+		 	 <div class="shopList" onClick="window.location.href='home.html'">
 		 		<div class="shopList-Left">
-		 			<img src="images/lun.png"/>
+		 			<img src="images/轮播图.png"/>
 		 		</div>
 		 		<div class="shopList-Right">
 		 			<p>我是一个商品名字</p>
@@ -417,50 +528,58 @@
 		 			<p>点击查看详情</p>
 		 			<span>立即兑换</span>
 		 		</div>
-		 	</div> -->
+		 	</div> 
+		 	 <div class="shopList" onClick="window.location.href='home.html'">
+		 		<div class="shopList-Left">
+		 			<img src="images/轮播图.png"/>
+		 		</div>
+		 		<div class="shopList-Right">
+		 			<p>我是一个商品名字</p>
+		 			<p>行为积分：2000</p>
+		 			<p>市场价:￥50</p>
+		 			<p>点击查看详情</p>
+		 			<span>立即兑换</span>
+		 		</div>
+		 	</div> 
 		 </div>
 		<!--商品模块-->
 		
 		<!--夏季新品-->
-<div class="moreSwiper">
-    <!-- <div class="swiperList">
 		<div class="scroe">
 			<div>夏季新品</div>
 		</div>
-	
-		 <div class="versatile">
-		   	 <div class="swiper-container swiper3">
-			    <div class="swiper-wrapper swiperSummer">
-
-			      
-                   <div class="swiper-slide swiperHref"><img src="images/lun.png"/></div> 
-		           <div class="swiper-slide swiperHref"><img src="images/lun.png"/></div> 
-
-			     </div>
-			    <div class="swiper-pagination"></div>
-			  </div>
-		  </div>
-	 </div> -->
-	 <!-- <div class="swiperList"> -->
-
-	 	<!-- <div class="scroe">
-			  <div>中秋一起</div>
-		</div> -->
-
-		<!--  <div class="versatile">
-		   	 <div class="swiper-container swiper4">
-			    <div class="swiper-wrapper swiperMid">
-			      <div class="swiper-slide swiperHref"><img src="images/lun.png"/></div>
-			      <div class="swiper-slide swiperHref"><img src="images/lun.png"/></div>
-			    </div>
-			    <div class="swiper-pagination"></div>
-			  </div>
-		 </div> -->
-
-
-	 <!-- </div> -->
-</div>
-
+		<!--夏季新品-->
+		<!--轮播3-->
+		<div class="versatile">
+			<!--若不滑动swiper-no-swiping-->
+			<div class="swiper-container swiper3">
+				<div class="swiper-wrapper swiperSummer">
+					<div class="swiper-slide swiperHref" onClick="window.location.href='home.html'"><img src="images/轮播图.png"/></div>
+					<div class="swiper-slide swiperHref"><img src="images/轮播图.png"/></div> 
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<!--轮播3-->
+		
+		<!--中秋一起-->
+		<div class="scroe">
+			<div>中秋一起</div>
+		</div>
+		<!--中秋一起-->
+		<!--轮播4-->
+		<div class="versatile">
+			<!--若不滑动swiper-no-swiping-->
+			<div class="swiper-container swiper4">
+				<div class="swiper-wrapper swiperMid">
+					<div class="swiper-slide swiperHref" onClick="window.location.href='home.html'"><img src="images/轮播图.png"/></div>
+					<div class="swiper-slide swiperHref"><img src="images/轮播图.png"/></div> 
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<!--轮播4-->
+		
 		
 		<!--浓情中秋-->
 		<div class="scroe">
@@ -469,9 +588,12 @@
 		<!--弄清中秋-->
 		<!--散图-->
 		<div class="plots">
-		 <!-- <div class="versatile">
-		 	<img src="images/lun.png"/>
-		 </div>-->
+			<div class="versatile" onClick="window.location.href='home.html'">
+				<img src="images/轮播图.png"/>
+			</div>
+			<div class="versatile">
+				<img src="images/轮播图.png"/>
+			</div>
 		</div>
 		<!--散图-->
 		
@@ -480,257 +602,178 @@
 		<!--猜你喜欢-->
 		<!--商品-->
 		<div class="goods">
-			<!-- <div class="goodsList">
+			<div class="goodsList" linktype="link" onClick="window.location.href='home.html'">
 				<div class="goodList-Image">
-					<img src="images/lun.png"/>
+					<img src="images/轮播图.png"/>
 				</div>
 				<div class="goodList-Content">
 					<p>苏荷无儿东忽儿华为我看见的卡号儿东忽儿华为我看见儿东忽儿华为我看见</p>
 					<p>￥799.00 <span>￥799.00</span></p>
 				</div>
-			</div> -->
+			</div>
+			<div class="goodsList" linktype="miniqrcode" miniPic="images/二维码.png">
+				<div class="goodList-Image">
+					<img src="images/轮播图.png"/>
+				</div>
+				<div class="goodList-Content">
+					<p>苏荷无儿东忽儿华为我看见的卡号</p>
+					<p>￥799.00 <span>￥799.00</span></p>
+				</div>
+			</div>
+			<div class="goodsList">
+				<div class="goodList-Image">
+					<img src="images/轮播图.png"/>
+				</div>
+				<div class="goodList-Content">
+					<p>苏荷无儿东忽儿华为我看见的卡号</p>
+					<p>￥799.00 <span>￥799.00</span></p>
+				</div>
+			</div> 
 		</div>
 		<!--商品-->
+		
+		
 		<div style="width:100%;height:2rem;"></div>
 		
 		
 		<!--底部导航模块-->
 		<div class="barber">
-			
-				<div class="barberList barberAfter btn0" onclick="window.location.href='home.html'">
-					<p><span class="icon iconfont">&#xe678;</span></p>
-					<p>首页</p>
-				</div>
-				<div class="barberList btn1" onclick="window.location.href='floor.html'">
-					<p><span class="icon iconfont">&#xe61f;</span></p>
-					<p>楼层导航</p>
-				</div>
-				<div class="barberList btn2">
-					<p><span class="icon iconfont">&#xe61b;</span></p>
-					<p>线上商城</p>
-				</div>
-				<div class="barberList btn3">
-					<p><span class="icon iconfont">&#xe653;</span></p>
-					<p>我的</p>
-				</div>
-			
+			<div class="barberList barberAfter btn0" onClick="window.location.href='home.html'">
+				<p><span class="icon iconfont">&#xe678;</span></p>
+				<p>首页</p>
+			</div>
+			<div class="barberList btn1" onClick="window.location.href='floor.html'">
+				<p><span class="icon iconfont">&#xe61f;</span></p>
+				<p>楼层导航</p>
+			</div>
+			<div class="barberList btn2">
+				<p><span class="icon iconfont">&#xe61b;</span></p>
+				<p>线上商城</p>
+			</div>
+			<div class="barberList btn3">
+				<p><span class="icon iconfont">&#xe653;</span></p>
+				<p>我的</p>
+			</div>
 		</div>
 		<!--底部导航模块-->
 	</div>
 	
- <!-- 黑色遮罩 -->
-	  <div class="shadow">
-	  	 
-	  	 <!--这是一个广告位-->
-	  	 <div class="poster">
-	  	 	<h3>我是一个广告</h3>
-	  	 </div>
-	  	  <!--我是一个code或者礼品卡的code-->
-	  	  <div class="code">
-	  	  	 <img src=""/>
-	  	  </div> 
-	  	  <!--关闭按钮-->
-	  	 <div class="close">×</div>  
-	  	 
-	  	
-	  </div> 
+<!-- 黑色遮罩 -->
+<div class="shadow">
+	<!--这是一个广告位-->
+	<div class="poster">
+		<h3>我是一个广告</h3>
+	</div>
+	<!--我是一个二维码或者礼品卡的二维码-->
+	<div class="code">
+		<img src=""/>
+	</div> 
+	<!--关闭按钮-->
+	<div class="close">×</div>  
+</div> 
 	  
-	
 </body>
 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>		
 <script type="text/javascript" src="js/d.js"></script>
 <script type="text/javascript" src="js/swiper.min.js"></script>
 <script src="js/iconfont.js"></script>
 <script type="text/javascript" src="json/json.js"></script>
+
 <script type="text/javascript">
-
 window.onload = function() {
-// 头部轮播
-for(let i in swiperArr){
-	let div = $('<div class="swiper-slide swiperHref"></div>');
-	let htmls = `<img src="${swiperArr[i].img}"/>`;
-	div.html(htmls)
-	$('.swiperTop').append(div)
-}
-// 夏季新品轮播
-for(let j in arr){
-	if(arr[j].type == 1){//左右轮播
-	      leftSwiper(arr,j)
-	}else if(arr[j].type == 2){//如果是上下轮播
-        topSwiper(arr,j)
-	}
-}
-
-// 左右轮播封装
-function leftSwiper(arr,j){
-	 let swiperList = $('<div class="swiperList"><div class="scroe"><div>'+arr[j].name+'</div></div><div class="versatile"><div class="swiper-container swiper3"><div class="swiper-wrapper swiperSummer"></div><div class="swiper-pagination"></div></div></div></div>'); 
-	   for(var i in arr[j].arrs){
-	   	 let div = $('<div class="swiper-slide swiperHref"></div>');
-	   	 div.html(`<img src="${arr[j].arrs[i].img}"/>`);
-	   	 swiperList.find('.swiperSummer').append(div);
-	   }
-	   $(".moreSwiper").append(swiperList)
-}
-// 上下轮播
-function topSwiper(arr,j){
-  let swiperList = $('<div class="swiperList"><div class="scroe"><div>'+arr[j].name+'</div></div><div class="versatile"><div class="swiper-container swiper4"><div class="swiper-wrapper swiperMid"></div><div class="swiper-pagination"></div></div></div></div>'); 
-	   for(var i in arr[j].arrs){
-	   	 let div = $('<div class="swiper-slide swiperHref"></div>');
-	   	 div.html(`<img src="${arr[j].arrs[i].img}"/>`);
-	   	 swiperList.find('.swiperMid').append(div);
-	   }
-	   $(".moreSwiper").append(swiperList)
-}
-
-// 功能模块数据
-for(let j in arr){
-	let modules = $('<div class="swiper-slide module"></div>');
-	 for(let i in arr[j].arrs){
-	   let div = $('<div class="versatileList"></div>');
-	   div.attr('data-types',arr[j].arrs[i].id);//给每个功能都添加id
-	   let htmls = `
-	       <p><img src="${arr[j].arrs[i].img}"/></p>
-	       <p>${arr[j].arrs[i].name}</p>
-	   `;
-	   div.html(htmls);
-	   modules.append(div);
-	}
-   $(".moduleWrap").append(modules)
-}
-// 积分兑换模块
-for(let i in [1,2]){
-	let div = $('<div class="shopList"></div>');
-	let htmls = `
-                <div class="shopList-Left">
-		 			<img src="images/lun.png"/>
-		 		</div>
-		 		<div class="shopList-Right">
-		 			<p>我是一个商品名字</p>
-		 			<p>行为积分：2000</p>
-		 			<p>市场价:￥50</p>
-		 			<p>点击查看详情</p>
-		 			<span>立即兑换</span>
-		 		</div>
-	`;
-	div.html(htmls)
-	$('.shops').append(div)
-}
-// 浓情中秋散图
-for(let i in swiperArr){
-	let div = $('<div class="versatile"></div>');
-	let htmls = `<img src="${swiperArr[i].img}"/>`;
-	div.html(htmls)
-	$('.plots').append(div)
-}
-// 猜你喜欢商品图
-for(let i in [1,2,3]){
-	let div = $('<div class="goodsList"></div>');
-	let htmls = `
-                <div class="goodList-Image">
-					<img src="images/lun.png"/>
-				</div>
-				<div class="goodList-Content">
-					<p>苏荷无儿东忽儿华为我看见的卡号</p>
-					<p>￥799.00 <span>￥799.00</span></p>
-				</div>
-	`;
-	div.html(htmls)
-	$('.goods').append(div)
-}
-
-// 点击lun跳转页面目前是baidu连接可根据后台接口更换
-$(".swiperHref").click(function(){
-  window.location.href='https://www.baidu.com'
-})
-// 点击功能页（当types为2的时候点击出现code）
-$(".versatileList").click(function(res){
-	let types = res.currentTarget.dataset.types
-	if(types == 2){
-      $(".code").find("img").attr("src",'images/code.png')//此code图片可更换为礼品卡code
-      code();
-	}
-})
-//横向轮播
-var swiper1 = new Swiper('.top-swiper', {
-      pagination: {
-        el: '.swiper-pagination',//有分页器
-      },
-      autoplay:{
-        disableOnInteraction: false,//默认true用户操作swiper之后自动切换是否停止
-        delay:1000,//默认3000
-      },
-    });
- // 功能按钮的左右滑动
-var swiper2 = new Swiper('.swiper2', {
-   	 resistanceRatio:0//禁止功能页出现惯性弹性
-   });
- //横向轮播
-var swiper3 = new Swiper('.swiper3', {
-	pagination: {
-        el: '.swiper-pagination',//有分页器
-      },
-      autoplay:{
-        disableOnInteraction: false,//默认true
-        delay:1000,//默认3000
-      },
-   });
- //竖向轮播
- var swiper4 = new Swiper('.swiper4', {
- 	direction: 'vertical',
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,//此参数设置为true时，点击分页器的指示点分页器会控制Swiper切换。
-      },
-      autoplay:{
-        disableOnInteraction: false,//默认true
-        delay:1000,//默认3000
-      },
- });
- // 点击底部导航按钮变色
-let btnLength = $(".barber").find("div").length
-   for(let i = 0;i < btnLength;i++){
-   	 $('.btn'+i).bind('click',{index:i},changeBtn)
-   }
-function changeBtn(event){
-//	var i = event.data.index;
-	 $(".barber").find("div").removeClass("barberAfter")
-	$(this).addClass("barberAfter")
- }
-
-//防止页面穿透滚动
-function bodyScroll(event){  
-    event.preventDefault();  
-} 
-//页面直接出现广告页
-var poster = true;//如果显示广告位
-if(poster){
- document.body.addEventListener('touchmove',bodyScroll,false); //防止页面滚动穿透
- $('body').css({'position':'fixed',"width":"100%"});//防止页面滚动穿透
- $(".shadow").css("display","block")
- $(".poster").css("display","block")	
-}
-//点击关闭按钮
-$(".close").click(function(){
-	document.body.removeEventListener('touchmove',bodyScroll,false); //关闭页面穿透  
-    $("body").css({"position":"initial","height":"auto"});  //关闭页面穿透
-	$(".shadow").css("display","none");
-})
-//点击code的按钮/点击礼品卡也可出现此样式
-$(".infoQucode").click(function(){
-	$(".code").find("img").attr("src",'images/code.png')//此code图片可更换为正常code
-	code()
-})
-
-function code(){
-  document.body.addEventListener('touchmove',bodyScroll,false); //防止页面滚动穿透
-	$('body').css({'position':'fixed',"width":"100%"});//防止页面滚动穿透
-	$(".shadow").css("display","block")
-	$(".code").css("display","block")
-	$(".poster").css("display","none")
-}
-
-
-}
+	//横向轮播
+	var swiper1 = new Swiper('.top-swiper', {
+		pagination: {
+			el: '.swiper-pagination',//有分页器
+		},
+		autoplay:{
+			disableOnInteraction: false,//默认true用户操作swiper之后自动切换是否停止
+			delay:1000,//默认3000
+		},
+	});
 	
+	// 功能按钮的左右滑动
+	var swiper2 = new Swiper('.swiper2', {
+		resistanceRatio:0//禁止功能页出现惯性弹性
+	});
+	   
+	//横向轮播
+	var swiper3 = new Swiper('.swiper3', {
+		pagination: {
+			el: '.swiper-pagination',//有分页器
+		},
+		autoplay:{
+			disableOnInteraction: false,//默认true
+			delay:1000,//默认3000
+		},
+	});
+	   
+	//竖向轮播
+	var swiper4 = new Swiper('.swiper4', {
+		direction: 'vertical',
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,//此参数设置为true时，点击分页器的指示点分页器会控制Swiper切换。
+		},
+		autoplay:{
+			disableOnInteraction: false,//默认true
+			delay:1000,//默认3000
+		},
+	});
+	
+	//防止页面穿透滚动
+	function bodyScroll(event){  
+		event.preventDefault();  
+	} 
+	
+	//页面直接出现广告页
+	var poster = true;//如果显示广告位
+	if(poster){
+		document.body.addEventListener('touchmove',bodyScroll,false); //防止页面滚动穿透
+		$('body').css({'position':'fixed',"width":"100%"});//防止页面滚动穿透
+		$(".shadow").css("display","block")
+		$(".poster").css("display","block")	
+	}
+	//点击关闭按钮
+	$(".close").click(function(){
+		document.body.removeEventListener('touchmove',bodyScroll,false); //关闭页面穿透  
+		$("body").css({"position":"initial","height":"auto"});  //关闭页面穿透
+		$(".shadow").css("display","none");
+	})
+	//点击二维码的按钮/点击礼品卡也可出现此样式
+	$(".infoQucode").click(function(){
+		var miniPic = $(this).attr("miniPic");
+		$(".code").find("img").attr("src", miniPic)//此二维码图片可更换为正常二维码
+		code()
+	})
+	
+	function code(){
+		document.body.addEventListener('touchmove',bodyScroll,false); //防止页面滚动穿透
+		$('body').css({'position':'fixed',"width":"100%"});//防止页面滚动穿透
+		$(".shadow").css("display","block")
+		$(".code").css("display","block")
+		$(".poster").css("display","none")
+	}
+	
+	// 点击功能页（当types为2的时候点击出现二维码）
+	$(".versatileList").click(function(res){
+		var linktype = $(this).attr("linktype");
+		var miniPic = $(this).attr("miniPic");
+		if( linktype == 'miniqrcode'){
+			$(".code").find("img").attr("src", miniPic)//此二维码图片可更换为礼品卡二维码
+			code();
+		}
+	})
+	
+	// 点击商品
+	$(".goodsList").click(function(res){
+		var linktype = $(this).attr("linktype");
+		var miniPic = $(this).attr("miniPic");
+		if( linktype == 'miniqrcode'){
+			$(".code").find("img").attr("src", miniPic)//此二维码图片可更换为礼品卡二维码
+			code();
+		}
+	})
+}
 </script>
 </html>
