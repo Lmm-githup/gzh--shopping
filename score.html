@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>积分兑换</title>
+	<style type="text/css">
+	  *{
+	   	margin: 0;
+	   	padding: 0;
+	   }
+	   body,html{
+	   	background: #eee;
+	   }
+	   .wrap{
+	   	background: white;
+	   	height: 1.3rem;
+	   	overflow: hidden;
+	   }
+       .scroeTop{
+       	width:7.8rem;
+       	height: 0.8rem;
+       	/*background: pink;*/
+       	margin: 0.2rem auto;
+       	display: flex;
+       	justify-content: space-between;
+       	line-height: 0.8rem;
+       }
+       .scroeTop div{
+         width:50%;
+       	 font-size: 0.4rem;
+       	 text-align: center;
+       }
+       .scroeTop div:nth-child(2){
+       	border-left:0.05rem solid #a6a6a6;
+       }
+       .btns{
+       	width:75%;
+       	height:1.04rem;
+       	margin: 0 auto;
+       	/*background: pink;*/
+       	display: flex;
+       	justify-content: space-between;
+       	font-size: 0.4rem;
+       }
+       .btns div{
+       	width:1.7rem;
+       	height:1.04rem;
+       	line-height:1.04rem;
+       	text-align: center;
+       }
+       .btnsAfter{
+       	color:#BA1722;
+       	border-bottom:0.06rem solid #BA1722;
+       }
+       .Addbtns{
+        width:50%;
+       	height:1.5rem;
+       	margin: 0 auto;
+       	/*background: pink;*/
+       	display: flex;
+       	justify-content: space-between;
+       	font-size: 0.4rem;
+       }
+      .Addbtns div{
+       	width:1.6rem;
+       	height:1.5rem;
+       	line-height:1.5rem;
+       	text-align: center;
+       }
+       .AddbtnsAfter{
+       	color:#BA1722;
+       }
+      .shops{
+	 	width:92%;
+        margin: 0 auto;
+	 }
+	 .shops .shopList{
+	 	width:100%;
+	 	height:3.5rem;
+	 	background: white;
+	 	border-radius: 0.2rem;
+	 	display: flex;
+	 	margin-top:0.2rem;
+	 }
+	 .shops .shopList .shopList-Left{
+	 	width:3.04rem;
+	 	height: 3.04rem;
+	 	/*background: pink;*/
+	 	margin:0.2rem 0.2rem 0.2rem 0.2rem;
+	 }
+	 .shops .shopList .shopList-Left img{width:100%;height:100%}
+	 .shops .shopList .shopList-Right{
+	 	width:5.5rem;
+	 	height:3.04rem;
+	 	/*background: yellow;*/
+	 	margin-top:0.2rem;
+	 	position: relative;
+	 }
+	 .shops .shopList .shopList-Right p{
+	 	font-size: 0.4rem;
+	 	line-height: 0.68rem;
+	 }
+	 .shops .shopList .shopList-Right p:nth-child(4){
+	 	margin-top:0.5rem;
+	 	color: #999999;
+	 }
+	 .shops .shopList .shopList-Right span{
+	 	width:2.06rem;
+	 	height: 0.59rem;
+	 	display: inline-block;
+	 	background: #ba1722;
+	 	color: white;
+	 	text-align: center;
+	 	line-height: 0.59rem;
+	 	font-size: 0.37rem;
+	 	border-radius: 5rem;
+	 	position: absolute;
+	 	right:0;
+	 	top:2.2rem;
+	 }
+	</style>
+</head>
+<body>
+	<div class="scroe">
+		<div class="wrap">
+			<div class="scroeTop">
+				<div>消费积分：200</div>
+				<div>体验积分：200</div>
+			</div>
+		</div>
+		
+		<!--按钮选择模块-->
+		  <div class="btns">
+		  	<div class="btn0 btnsAfter" data-score="0">全部</div>
+		  	<div class="btn1" data-score="1">消费积分</div>
+		  	<div class="btn2" data-score="2">体验积分</div>
+		  </div>
+		<!--按钮选择模块-->
+		
+		<!--升序降序-->
+		  <div class="Addbtns">
+		  	<div class="Addbtn0 AddbtnsAfter" data-sort="top">积分升序</div>
+		  	<div class="Addbtn1" data-sort="bottom">积分降序</div>
+		  </div>
+		<!--升序降序-->
+		
+		<!--商品模块-->
+		 <div class="shops">
+		 	<!-- <div class="shopList">
+		 		<div class="shopList-Left"><img src="images/轮播图.png"/></div>
+		 		<div class="shopList-Right">
+		 			<p>戴森活生生</p>
+		 			<p>行为积分：2000</p>
+		 			<p>市场价:￥50</p>
+		 			<p>点击查看详情</p>
+		 			<span>立即兑换</span>
+		 		</div>
+		 	</div> -->
+		 </div>
+		<!--商品模块-->
+		
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>		
+<script type="text/javascript" src="js/d.js"></script>
+<script type="text/javascript" src="json/score.js"></script>
+<script type="text/javascript">
+window.onload = function() {
+// 默认积分为全部和升序
+var score = 0,sort = 'top';
+judge(score,sort)
+
+// 点击积分按钮变色
+ let btnLength = $(".btns").find("div").length
+   for(let i = 0;i < btnLength;i++){
+   	 $('.btn'+i).bind('click',{index:i},changeBtn)
+   }
+function changeBtn(event){
+//	var i = event.data.index;
+    $(".shops").empty();
+    score = event.currentTarget.dataset.score
+    judge(score,sort)//请求数据
+
+	$(".btns").find("div").removeClass("btnsAfter")
+	$(this).addClass("btnsAfter")
+}
+
+// 点击升序降序按钮变色
+   let AddbtnLength = $(".Addbtns").find("div").length
+   for(let i = 0;i < AddbtnLength;i++){
+   	 $('.Addbtn'+i).bind('click',{index:i},changeaddBtn)
+   }
+  function changeaddBtn(event){
+//	var i = event.data.index;
+    $(".shops").empty();
+    sort = event.currentTarget.dataset.sort
+    judge(score,sort)//请求数据
+	$(".Addbtns").find("div").removeClass("AddbtnsAfter")
+	$(this).addClass("AddbtnsAfter")
+  }
+  
+
+// 请求接口数据分装
+  function list(arr){
+    for(let i in arr){
+	let div = $('<div class="shopList"></div>');
+	let htmls = `
+                <div class="shopList-Left">
+		 			<img src="${arr[i].img}"/>
+		 		</div>
+		 		<div class="shopList-Right">
+		 			<p>${arr[i].name}</p>
+		 			<p>${arr[i].type}：${arr[i].score}</p>
+		 			<p>市场价:￥${arr[i].price}</p>
+		 			<p>点击查看详情</p>
+		 			<span>立即兑换</span>
+		 		</div>
+	`;
+	div.html(htmls)
+	$('.shops').append(div)
+    }
+  }
+
+// 数据点击按钮判断此处请求接口
+  function judge(score,sort){
+  	if(sort == "top"){
+  		if(score == 1){
+  		   zdSrot(arr1)
+           list(arr1)
+  		}else if(score == 2){
+  			zdSrot(arr2)
+            list(arr2)
+  		}else if(score == 0){
+  			zdSrot(arr)
+            list(arr)
+  		}
+  	}else{
+  		if(score == 1){
+  		   bdSort(arr1)
+           list(arr1)
+  		}else if(score == 2){
+  			bdSort(arr2)
+            list(arr2)
+  		}else if(score == 0){
+  			bdSort(arr)
+            list(arr)
+  		}
+  	}
+  }
+}
+
+// var array=[10,20,9,8,79,65,100];
+    //升序排序
+function zdSrot(arr) {
+            for(let i = 0; i < arr.length - 1; i++){ //减1是因为排到最后的时候就是最大的了，可以不用再重复一次
+                for(let j = 0; j < arr.length - 1 - i; j++){ //减1减i可以减少重复的排序动作
+                    if(arr[j].price > arr[j+1].price){
+                        let temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+ // 降序
+function bdSort(arr){
+	for(let i = 0; i < arr.length - 1; i++){ //减1是因为排到最后的时候就是最大的了，可以不用再重复一次
+                for(let j = 0; j < arr.length - 1 - i; j++){ //减1减i可以减少重复的排序动作
+                    if(arr[j].price < arr[j+1].price){
+                        let temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                    }
+                }
+            }
+            return arr;
+}
+
+</script>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>品牌详情</title>
+	<link rel="stylesheet" href="https://g.alicdn.com/thx/cube/1.3.2/cube.min.css">
+	<link rel="stylesheet" href="css/demo.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+	<style>
+	  *{
+	   	margin: 0;
+	   	padding: 0;
+	   }
+	   body,html{
+	   	background: #eee;
+	   }
+	   a{
+	   	color: #999999;text-decoration:none;
+	   }
+	   /*chrome 和Safari*/
+	   .Wrap::-webkit-scrollbar { width: 0 !important }
+	   /*IE 10+*/
+	   .Wrap{ -ms-overflow-style: none; }
+	   /*Firefox*/
+	   .Wrap { overflow: -moz-scrollbars-none; }
+       .floorDetails .DetailsImage{
+       	width: 100%;
+       	height:5.5rem;
+       	position:relative;
+       	background: white;
+       }
+       .floorDetails .DetailsLogo{
+       	width:3rem;
+       	height: 4.4rem;
+       	background: white;
+       	overflow: hidden;
+       }
+       .floorDetails .DetailsLogo .logo{
+       	width:2.4rem;
+       	height: 2.4rem;
+       	/*background: yellow;*/
+       	margin: 0.5rem auto;
+       }
+       .floorDetails .DetailsLogo .logo img{width:100%;height:100%}
+       .Wrap{
+       	position: absolute;
+       	right:0;
+       	top:0.3rem;
+       	width:6.9rem;height:5rem;overflow-x: scroll;
+       }
+       .floorDetails .DetailsRight{
+       	/*width:220%;*/
+       	height: 4.5rem;
+       	background: white;
+       	font-size: 0;
+       }
+       .floorDetails .DetailsRight div{
+       	width:6.4rem;
+       	height: 4rem;
+       	display: inline-block;
+       	background: yellow;
+       	margin-right: 0.3rem;
+       	border-radius: 0.2rem;
+       	margin-top:0.1rem;
+       	overflow: hidden;
+       }
+       .floorDetails .DetailsRight div img{width:100%;height:100%}
+       .recommend{
+       	width: 100%;
+       	height: 3rem;
+       	background: white;
+       	line-height: 0.6rem;
+       }
+       .recommend p{
+       	margin-left: 0.4rem;
+       }
+       .recommend p:nth-child(1){
+       	font-size: 0.48rem;
+       	font-weight: bold;
+       }
+       .recommend p:nth-child(2){
+       	font-size: 0.35rem;
+       	font-weight: bold;
+       	margin-top:0.3rem;
+       }
+       .recommend p:nth-child(3),.recommend p:nth-child(4){
+       	font-size: 0.35rem;
+       	color: #999999;
+       }
+       .show{
+       	width:92%;
+       	background: white;
+       	border-radius: 0.3rem;
+       	margin: 0.5rem auto;
+       	overflow: hidden;
+       }
+       .show p{
+       	font-size: 0.5rem;
+       	/*padding-left: 0.5rem;*/
+       	margin:0.5rem;
+       }
+       .show div{
+       	font-size: 0.4rem; 
+       	padding-left: 0.5rem;
+       	margin-bottom: 0.6rem;
+       }
+	</style>
+</head>
+<body>
+	<div class="floorDetails">
+		<!--头部图片-->
+		<div class="DetailsImage">
+			<div class="DetailsLogo">
+				<div class="logo"><img src="images/lun.png"></div>
+			</div>
+			<div class="Wrap">
+				<div class="DetailsRight">
+						<!-- <div><img src="images/lun.png"></div>
+						<div></div>
+						<div></div> -->
+			        </div>
+			</div>
+		</div>
+		<!--头部图片-->
+		
+		<!--地址电话-->
+		<div class='recommend'>
+			<p>ROLEX 劳力士</p>
+			<p><span class="icon iconfont">&#xe61e;</span> 购物中心-1f 西区</p>
+			<p style="padding-left: 0.55rem;">精品-名表</p>
+			<p><span class="icon iconfont">&#xe66e;</span> <a href="tel:13828172679">13622178579</a></p>
+		</div>
+		<!--地址电话-->
+		
+		<!--简绍-->
+		<div class="show">
+			<p>商户简介</p>
+			<div>这里是文字这里是文字这里是文字这里是文字这里是文字这里是文字这里是文字这里是文字这里是文字这里是文字这里是文字这里是文字这里是文字</div>
+		</div>
+		
+  </div>
+</body>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>		
+<script type="text/javascript" src="js/d.js"></script>
+<script type="text/javascript" src="json/json.js"></script>
+<script type="text/javascript">
+// var swiperArr = [{img:"images/lun.png",id:0},{img:"images/lun.png",id:1},{img:"images/lun.png",id:2}]//头部左右轮播
+	window.onload = function() {
+
+        for(let i in swiperArr){
+              let div = $('<div></div>');
+              let htmls = `<img src="${swiperArr[i].img}"/>`;
+              div.html(htmls)
+              $('.DetailsRight').append(div)
+          }
+
+//		获取滑动的图
+		let imgsLength = $(".DetailsRight").find("div").length;
+		let imgsWidth = imgsLength * 6.69 + 1 +'rem';
+		$(".DetailsRight").css("width",imgsWidth);
+		
+
+	}
+</script>
+</html>
