@@ -16,6 +16,7 @@
 	   }
 	   body,html{
 	   	background: #eee;
+	   	line-height: 1.8;
 	   }
 	   /*分页器的点变色*/
 	.swiper-pagination-bullet-active {
@@ -28,7 +29,7 @@
 	  }
 	  .info{
 	  	width:90%;
-	  	/*height:3rem;*/
+	  	height: 3.5rem;
 	  	/*background: red;*/
 	  	margin: 0 auto;
 	  	overflow: hidden;
@@ -37,6 +38,7 @@
 	  	display: flex;
 	  	justify-content: space-between;
 	  	margin-top:0.4rem;
+	  	align-items: flex-start;/*为了让子元素有自己的高度*/
 	  }
 	  .info .infoImg{
 	  	width:2.5rem;
@@ -56,12 +58,18 @@
 	  	/*height: 2.3rem;*/
 	  	          /*background: deeppink;*/
 	  	position:relative;
+	  	 left: 0;
+		 top: 0;
+		 right: 0;
+		 bottom: 0;
+		 margin: auto;
 	  }
 	  .card{
 	  	width:1.6rem;
 	  }
 	  .cardWidth{
 	  	width:3rem;
+	  	vertical-align: top;
 	  }
 	  .cardTop{
 	  	width:0.7rem;
@@ -77,9 +85,9 @@
 	  }
 	  .infoConent{font-size: 0.35rem;}
 	  .changeCity{color: #ba1722;}
-	  /*.info .infoConent p:nth-child(1){
-	  	font-size: 0.4rem;
-	  }*/
+	  .info .infoConent p:nth-child(1){
+	  	font-weight: bold;
+	  }
 	  .info .infoConent p:nth-child(2){
 	  	width: 100%;
 	  	height:0.89rem;
@@ -224,12 +232,14 @@
 	 	width:92%;
 	 	margin: 0 auto;
 	 	font-size: 0;
+	 	display: flex;
+	 	flex-wrap: wrap;
 	 }
 	 .goods .goodsList{
 	 	width:48%;
 	 	height:6.36rem;
 	 	background: white;
-	 	display: inline-block;
+	 	/*display: inline-block;*/
 	 	margin-bottom: 0.2rem;
 	 	margin-left: 0.1rem;
 	 	border-radius: 0.1rem;
@@ -257,6 +267,7 @@
         display:-webkit-box;
         -webkit-box-orient:vertical;
         -webkit-line-clamp:2;
+        height: 0.95rem;
 	 }
 	 .goods .goodsList .goodList-Content p:nth-child(2){
 	 	margin-top:0.5rem;
@@ -412,7 +423,7 @@
 		
 		
 		<!--人员信息-->
-		<div style="background: white;">
+		<div style="background: white">
 			<div class="info">
 				<div class="infoWrap"> 
 					<div class="infoImg"><img src="images/轮播图.png"/></div>
@@ -435,7 +446,7 @@
 		
 		
 		<!--人员信息-->
-		<div style="background: white;">
+		<div style="background: white">
 			<div class="info">
 				<div class="infoWrap"> 
 					<div class="infoImg"><img src="images/轮播图.png"/></div>
@@ -458,7 +469,7 @@
 		
 		
 		<!--人员信息-->
-		<div style="background: white;">
+		<div style="background: white">
 			<div class="info">
 				<div class="infoWrap"> 
 					<div class="infoImg"><img src="images/轮播图.png"/></div>
