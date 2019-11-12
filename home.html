@@ -69,6 +69,23 @@
 	  }
 	  .cardWidth{
 	  	width:3rem;
+	  	height: 0.15rem;
+	  	position: relative;
+	    /*background: pink;*/
+	  	vertical-align: top;
+	  	display: inline-block;
+	  	/*background-image: url("images/silvery.png");*/
+	  	background-size: 100% 100%;
+	  }
+	  .percentage{
+	  	height: 0.14rem;
+	  	position: absolute;
+	  	display: inline-block;
+	  	border-radius: 30px;
+	  	left: 0;top: 0;
+	  }
+	  .cardWidths{
+	  	width:3rem;
 	  	vertical-align: top;
 	  }
 	  .cardTop{
@@ -407,14 +424,15 @@
 					<div class="infoConent">
 						<p>银星卡会员</p>
 						<p>
-							<img src="images/silver.png" class="card"/><img src="images/silver_process.png" class="cardWidth"/><img src="images/silver_upgrade.png" class="cardTop"/>
+							<img src="images/silver.png" class="card"/><img src="images/silver_upgrade.png" class="cardTop"/>
+							<span class="cardWidth"><span class="percentage"><span></span>
 							<div class="integrate small-font">9000/20000</div>
 						</p>
 						<p style="width:7rem;">消费积分：200 &nbsp;&nbsp;&nbsp;体验积分：200</p>
 						<p class="changeCity">常州购物中心 ▼</p>
 					</div>
 					
-					<!--此处二维码-->
+					
 					<div class="infoQucode" miniPic="images/二维码.png"><span class="icon iconfont">&#xe646;</span></div>
 				</div>
 			</div>
@@ -430,7 +448,8 @@
 					<div class="infoConent">
 						<p>金星卡会员</p>
 						<p>
-							<img src="images/gold.png" class="card"/><img src="images/gold_process.png" class="cardWidth"/><img src="images/gold_upgrade.png" class="cardTop"/>
+							<img src="images/gold.png" class="card"/><img src="images/gold_upgrade.png" class="cardTop"/>
+							<span class="cardWidth"><span class="percentage"><span></span>
 							<div class="integrate small-font">29000/50000</div>
 						</p>
 						<p style="width:7rem;">消费积分：200 &nbsp;&nbsp;&nbsp;体验积分：200</p>
@@ -453,7 +472,8 @@
 					<div class="infoConent">
 						<p>黑金卡会员</p>
 						<p>
-							<img src="images/blackgold.png" class="card"/><img src="images/blackgold_process.png" class="cardWidth"/><img src="images/blackgold_upgrade.png" class="cardTop"/>
+							<img src="images/blackgold.png" class="card"/><img src="images/blackgold_upgrade.png" class="cardTop"/>
+							<span class="cardWidth"><span class="percentage"><span></span>
 							<div class="integrate small-font">88000/100000</div>
 						</p>
 						<p style="width:7rem;">消费积分：200 &nbsp;&nbsp;&nbsp;体验积分：200</p>
@@ -476,7 +496,8 @@
 					<div class="infoConent">
 						<p>黑钻卡会员</p>
 						<p>
-							<img src="images/diamond.png" class="card"/><img src="images/diamond_process.png" class="cardWidth"/>
+							<img src="images/diamond.png" class="card"/>
+							<span class="cardWidth"><span class="percentage"><span></span>
 							<div class="integrate small-font">108000</div>
 						</p>
 						<p style="width:7rem;">消费积分：200 &nbsp;&nbsp;&nbsp;体验积分：200</p>
@@ -786,6 +807,34 @@ window.onload = function() {
 			code();
 		}
 	})
+
+
+//获取一下是什么卡:1=银卡2=金卡3=黑卡4=钻卡，total是积分总值，num是当前数值
+// let cardId = "card-1",total = (+20000),num = (+9000);//模拟银星卡
+// let cardId= "card-2",total = (+50000),num = (+29000);//模拟金星卡
+let cardId = "card-3",total = (+100000),num = (+88000);//模拟黑金卡
+// let cardId = "card-4",total = (+108000),num = (+108000);//模拟黑钻卡（设置总积分值与当前积分值一致）
+function number(cardId,total,num){
+   let percentage = Math.round(num/total*100);//先把数值算出来
+  if(cardId == "card-1"){//如果是银卡
+    color(percentage,"url('images/silvery.png')","#e9edf4")
+  }else if(cardId == "card-2"){//金星卡
+  	color(percentage,"url('images/yellow.png')","#fcf6de")
+  }else if(cardId == "card-3"){//黑金卡
+  	color(percentage,"url('images/glod.png')","#adadad")
+  }else{//黑钻卡
+  	color(percentage,"url('images/black.png')","#ae9dea")
+  }
 }
+// 设置卡的背景，颜色，进度条
+function color(percentage,src,color){
+    $(".cardWidth").css("backgroundImage",src);//设置银卡的背景图
+  	$('.percentage').css("width",percentage+"%").css("backgroundColor",color);//设置百分比和颜色
+}
+// 调用函数传参
+number(cardId,total,num);
+
+}
+
 </script>
 </html>
